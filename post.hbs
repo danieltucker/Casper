@@ -73,11 +73,23 @@ into the {body} tag of the default.hbs template --}}
             {{content}}
         </section>
 
-        {{!--
         <section class="article-comments gh-canvas">
-            If you want to embed comments, this is a good place to paste your code!
+            <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.identifier = ghost-{{comment_id}}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://danielgt.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </section>
-        --}}
 
     </article>
 </main>
